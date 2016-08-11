@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="nmrml2isa" version="0.2.1">
+        <repository changeset_revision="----" name="package_nmrml2isa_0_2_1" owner="weberrj" toolshed="----" />
+    </package>
+</tool_dependency>
+
