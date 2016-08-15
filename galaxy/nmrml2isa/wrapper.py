@@ -129,11 +129,6 @@ def main():
                      },
                 ],
 
-                'Post Extraction': {'value': ''},
-                'Derivatization': {'value': ''},
-                'Chromatography Instrument': {'name': '', 'ref': '', 'accession': ''},
-                'Column type': {'value': ''},
-                'Column model': {'value': ''},
                 }
 
     # check if using json file
@@ -206,8 +201,7 @@ def main():
         from nmrml2isa.parsing import full_parse
         # import progressbar as pb
         # parse the files
-        full_parse(args.inputzip, args.out_dir, args.study_title, usermeta=USERMETA, split=True, merge=False, verbose=False,
-                   multip=False)
+        full_parse(args.inputzip, args.out_dir, args.study_title, usermeta=USERMETA, verbose=False)
 
     except ImportError:
         import tempfile

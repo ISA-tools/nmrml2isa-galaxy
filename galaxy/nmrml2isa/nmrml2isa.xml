@@ -5,6 +5,8 @@
         <import>nmrml2isa_macros.xml</import>
     </macros>
 
+    <code file="ontology_search.py" />
+
     <requirements>
         <requirement type="package" version="0.2.1">nmrml2isa</requirement>
     </requirements>
