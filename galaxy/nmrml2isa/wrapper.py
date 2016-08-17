@@ -4,16 +4,19 @@ import os
 import argparse
 import textwrap
 import csv
+import inspect
 
 
 def ontology_lookup(name, table):
     # takes in ontology name and source (e.g. loc file) and outputs the associated accesion number
-    tool_data_pth = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'tool-data')
+    filename = inspect.getframeinfo(inspect.currentframe()).filename
+    path = os.path.dirname(os.path.abspath(filename))
+
     # check if correct table
     if table=="role":
-        tablepth = os.path.join(tool_data_pth, 'pub_role.loc')
+        tablepth = os.path.join(path, 'pub_role.loc')
     elif table=="status":
-        tablepth = os.path.join(tool_data_pth, 'pub_status.loc')
+        tablepth = os.path.join(path, 'pub_status.loc')
     else:
         print "Table not recognised"
         return ""
@@ -211,7 +214,7 @@ def main():
         os.system("nmrml2isa -i %s -o %s -s %s -m %s" % (args.inputzip, args.out_dir, args.study_title, temp.name))
         temp.close()
 
-    html_code = '<a href="%s/a_%s_metabolite_profiling_mass_spectrometry.txt">a_%s_metabolite_profiling_mass_spectrometry.txt</a>' \
+    html_code = '<a href="%s/a_%s_metabolite_profiling_NMR_spectroscopy.txt">a_%s_metabolite_profiling_NMR_spectroscopy.txt</a>' \
                 '<br/><a href="%s/i_Investigation.txt">i_Investigation.txt</a><br/>' \
                 '<a href="%s/s_%s.txt">s_test.txt</a><br/>' % tuple([args.study_title] * 6)
 

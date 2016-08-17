@@ -1,0 +1,4 @@
+"Source Name"	"Characteristics[Organism]"	"Term Source REF"	"Term Accession Number"	"Characteristics[Organism variant]"	"Term Source REF"	"Term Accession Number"	"Characteristics[Organism part]"	"Term Source REF"	"Term Accession Number"	"Protocol REF"	"Sample Name"
+""	""	""	""	""	""	""	""	""	""	"Sample collection"	"ADG10003u_007"
+""	""	""	""	""	""	""	""	""	""	"Sample collection"	"ADG10003u_008"
+""	""	""	""	""	""	""	""	""	""	"Sample collection"	"ADG10003u_009"

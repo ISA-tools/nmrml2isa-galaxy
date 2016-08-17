@@ -12,7 +12,7 @@ mkdir $DOWNLOAD_CACHE
 planemo dependency_script -r packages/package_nmrml2isa_0_4_22/
 . env.sh
 bash dep_install.sh
-planemo s --galaxy_root=../galaxy galaxy/nmrml2isa/
+planemo test --galaxy_root=../galaxy galaxy/nmrml2isa/
 rm env.sh
 rm dep_install.sh
 deactivate #exit virtualenv
