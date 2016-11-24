@@ -206,7 +206,7 @@ def main():
         from nmrml2isa.parsing import full_parse
         # import progressbar as pb
         # parse the files
-        full_parse(args.inputzip, args.out_dir, args.study_title, usermeta=USERMETA, verbose=False)
+        full_parse(args.inputzip, args.out_dir, args.study_title, usermeta=USERMETA, verbose=True)
 
     except ImportError:
         import tempfile
