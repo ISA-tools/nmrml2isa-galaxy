@@ -5,11 +5,11 @@
         <import>nmrml2isa_macros.xml</import>
     </macros>
 
-    <code file="ontology_search.py" />
-
     <requirements>
         <requirement type="package" version="0.3.0">nmrml2isa</requirement>
     </requirements>
+
+    <code file="ontology_search.py" />
 
     <stdio>
         <exit_code range="1:" />
@@ -174,12 +174,7 @@
                --organism_part_iri "$organism_part_iri";
 
 
-               ## TODO set outdir to something else
                mv "$name_of_study" "$isastudy.files_path";
-##               ln -s ./"$name_of_study" study_dir;
-
-##               cd study_dir;
-##               zip isa.zip i_* a_* s_* && mv isa.zip "$ISA_zip";
                ]]>
     </command>
 
@@ -200,22 +195,12 @@
         <test>
             <param name="name_of_study" value="test" />
             <param name="inputzip" value="metabolomics_study.zip" ftype="zip" />
-            <output name="html_file" value="metabolomics_study/test/index.html" />
-            <output name="i_file" value="metabolomics_study/test/i_Investigation.txt" />
-            <output_collection name="a_files" type="list" count="1">
-                <element name="a_test_metabolite_profiling_NMR_spectroscopy">
-                    <assert_contents>
-                        <has_n_columns n="81" />
-                    </assert_contents>
-                </element>
-            </output_collection>
-            <output_collection name="s_files" type="list" count="1">
-                <element name="s_test">
-                    <assert_contents>
-                        <has_n_columns n="12" />
-                    </assert_contents>
-                </element>
-            </output_collection>
+
+            <output name="isastudy" file="metabolomics_study/test/index.html">
+				<extra_files type="file" name='i_Investigation.txt' value="metabolomics_study/test/i_Investigation.txt" compare="diff"/>
+				<extra_files type="file" name='a_MYSTUDY_metabolite_profiling_NMR_spectroscopy.txt' value="metabolomics_study/test/a_test_metabolite_profiling_NMR_spectroscopy.txt" compare="diff"/>
+				<extra_files type="file" name='s_MYSTUDY.txt' value="metabolomics_study/test/s_test.txt" compare="diff"/>
+	        </output>
         </test>
     </tests>
     <help><![CDATA[
