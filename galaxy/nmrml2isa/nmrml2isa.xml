@@ -193,7 +193,7 @@
     </outputs>
     <tests>
         <test>
-            <param name="name_of_study" value="test" />
+            <param name="name_of_study" value="MYSTUDY" />
             <param name="inputzip" value="metabolomics_study.zip" ftype="zip" />
 
             <output name="isastudy" file="metabolomics_study/test/index.html">
