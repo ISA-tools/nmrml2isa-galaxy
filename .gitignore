@@ -5,3 +5,6 @@
 *~
 *.
 .DS_Store
+planemoenv
+tool_test_output.*
+planemo-venv
